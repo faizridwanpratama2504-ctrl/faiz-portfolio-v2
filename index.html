@@ -1,0 +1,2054 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Faiz — Software Developer</title>
+<meta name="description" content="Portfolio Faiz, Software Developer — proyek, skill, dan cara menghubungi.">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/assets/favicon-512.png">
+<link rel="shortcut icon" href="/assets/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<style>
+  :root{
+    --bg: #F2F4F7;
+    --bg-panel: #FFFFFF;
+    --ink: #10151C;
+    --ink-soft: #4B5768;
+    --ink-faint: #8592A3;
+    --line: #C9D2DC;
+    --accent: #2F6FED;
+    --accent-warm: #F2A73B;
+    --mono-bg: #10151C;
+    --mono-ink: #E7ECF3;
+    --mono-green: #6FE3A6;
+    --radius: 3px;
+    --max-w: 1180px;
+  }
+
+  *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+  body{
+    margin:0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1,h2,h3{
+    font-family: 'Space Grotesk', sans-serif;
+    line-height: 1.1;
+    margin: 0;
+  }
+  .mono{ font-family: 'IBM Plex Mono', monospace; }
+  a{ color: inherit; text-decoration: none; }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+  img{ max-width:100%; display:block; }
+
+  .wrap{
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+  @media (max-width: 640px){
+    .wrap{ padding: 0 20px; }
+  }
+
+  /* ---------- NAV ---------- */
+  header.site-nav{
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(242,244,247,0.86);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    height: 68px;
+  }
+  .logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-family:'Space Grotesk', sans-serif;
+    font-weight:700;
+    font-size: 1.05rem;
+    letter-spacing: -0.01em;
+  }
+  .logo .logo-mark{
+    height: 24px;
+    width: auto;
+    display:block;
+  }
+  nav.links{ display:flex; gap: 28px; }
+  nav.links a{
+    font-size: 0.86rem;
+    color: var(--ink-soft);
+    font-family:'IBM Plex Mono', monospace;
+    letter-spacing: 0.01em;
+    transition: color .15s ease;
+  }
+  nav.links a:hover{ color: var(--ink); }
+  .status-badge{
+    display:flex; align-items:center; gap:7px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 0.74rem;
+    color: var(--ink-soft);
+    border: 1px solid var(--line);
+    padding: 6px 11px;
+    border-radius: var(--radius);
+    background: var(--bg-panel);
+  }
+  .status-badge .pulse{
+    width:7px; height:7px; border-radius:50%;
+    background: var(--mono-green);
+    box-shadow: 0 0 0 0 rgba(111,227,166,0.6);
+    animation: pulse 2.4s infinite;
+  }
+  @keyframes pulse{
+    0%{ box-shadow: 0 0 0 0 rgba(111,227,166,0.55); }
+    70%{ box-shadow: 0 0 0 7px rgba(111,227,166,0); }
+    100%{ box-shadow: 0 0 0 0 rgba(111,227,166,0); }
+  }
+  .menu-toggle{ display:none; }
+
+  @media (max-width: 780px){
+    nav.links{ display:none; }
+    .status-badge span.txt{ display:none; }
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position: relative;
+    padding: 96px 0 88px;
+    overflow: hidden;
+    border-bottom: 1px solid var(--line);
+    background-image:
+      linear-gradient(var(--line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size: 42px 42px;
+    background-position: -1px -1px;
+    -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+            mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+  }
+  .hero-inner{
+    position: relative;
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 56px;
+    align-items: start;
+  }
+  .hero .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--accent);
+    letter-spacing: 0.04em;
+    margin-bottom: 18px;
+    display:block;
+  }
+  .hero h1{
+    font-size: clamp(2.4rem, 5vw, 3.6rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+  .hero h1 .accent{ color: var(--accent); }
+  .hero p.lede{
+    margin-top: 22px;
+    max-width: 46ch;
+    font-size: 1.08rem;
+    color: var(--ink-soft);
+  }
+  .hero .cta-row{
+    display:flex;
+    gap: 14px;
+    margin-top: 34px;
+    flex-wrap: wrap;
+  }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding: 13px 22px;
+    border-radius: var(--radius);
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 0.85rem;
+    font-weight:500;
+    border: 1px solid transparent;
+    cursor:pointer;
+    transition: transform .15s ease, background .15s ease, border-color .15s ease;
+  }
+  .btn-primary{
+    background: var(--ink);
+    color: #F2F4F7;
+  }
+  .btn-primary:hover{ background: var(--accent); transform: translateY(-1px); }
+  .btn-ghost{
+    border-color: var(--line);
+    color: var(--ink);
+    background: var(--bg-panel);
+  }
+  .btn-ghost:hover{ border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
+
+  /* ---------- HERO SHOWCASE: kartu kaca pengganti terminal ---------- */
+  .hero-showcase{
+    display:flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .hero-photo-card{
+    position: relative;
+    display:flex;
+    justify-content:center;
+    padding-bottom: 42px;
+  }
+  .hero-photo-glow{
+    position:absolute;
+    top: -18px;
+    width: min(340px, 82%);
+    aspect-ratio: 1/1;
+    border-radius:50%;
+    background:
+      radial-gradient(circle at 28% 26%, rgba(47,111,237,0.55), transparent 60%),
+      radial-gradient(circle at 74% 72%, rgba(242,167,59,0.5), transparent 60%);
+    filter: blur(38px);
+    opacity: 0.65;
+    z-index:0;
+    pointer-events:none;
+  }
+  .hero-name-chip{
+    position:absolute;
+    left:50%;
+    bottom:0;
+    transform: translateX(-50%);
+    z-index:2;
+    padding: 10px 22px;
+    border-radius: 999px;
+  }
+  .hero-name-chip .hero-name{ text-align:center; }
+
+  .hero-glass-card{
+    position:relative;
+    border-radius: 16px;
+    padding: 24px 26px;
+    display:flex;
+    flex-direction: column;
+  }
+  .glass-row{
+    display:flex;
+    align-items:flex-start;
+    gap: 14px;
+    padding: 14px 0;
+  }
+  .glass-row:first-child{ padding-top:0; }
+  .glass-row:last-child{ padding-bottom:0; }
+  .glass-row + .glass-row{ border-top: 1px dashed rgba(16,21,28,0.14); }
+  .glass-icon{
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 1rem;
+    color: var(--accent);
+    width: 28px; height: 28px; flex-shrink:0;
+    display:flex; align-items:center; justify-content:center;
+    border-radius: 8px;
+    background: rgba(47,111,237,0.12);
+    margin-top: 2px;
+  }
+  .glass-copy{ display:flex; flex-direction:column; gap: 5px; min-width:0; }
+  .glass-label{
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+  .glass-value{ font-size: 0.96rem; color: var(--ink); line-height:1.5; }
+  .glass-value.tag{
+    display:inline-flex; align-items:center; gap:7px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 0.8rem;
+    background: rgba(111,227,166,0.22);
+    color: #1D6B49;
+    padding: 5px 12px;
+    border-radius: 999px;
+    width: fit-content;
+  }
+  .glass-value.tag::before{
+    content:''; width:6px; height:6px; border-radius:50%;
+    background: #2E9B63;
+  }
+
+  @media (max-width: 900px){
+    .hero-inner{ grid-template-columns: 1fr; }
+    .hero-showcase{ max-width: 420px; margin: 0 auto; }
+  }
+
+  /* ---------- ANIMASI MASUK (entrance / scroll reveal) ---------- */
+  .reveal, .reveal-hero{
+    opacity: 0;
+    transform: translateY(24px);
+    will-change: opacity, transform;
+  }
+  .reveal.in-view, .reveal-hero.in-view{
+    animation: revealUp 0.75s cubic-bezier(.16,.8,.24,1) forwards;
+  }
+  @keyframes revealUp{
+    from{ opacity:0; transform: translateY(24px); }
+    to{ opacity:1; transform: translateY(0); }
+  }
+  @media (prefers-reduced-motion: reduce){
+    .reveal, .reveal-hero{ opacity:1 !important; transform:none !important; animation:none !important; }
+  }
+
+  /* ---------- SECTION SHELL ---------- */
+  section{ padding: 84px 0; border-bottom: 1px solid var(--line); }
+  .section-head{
+    display:flex;
+    align-items:baseline;
+    gap: 16px;
+    margin-bottom: 44px;
+  }
+  .section-head .idx{
+    font-family:'IBM Plex Mono', monospace;
+    color: var(--accent);
+    font-size: 0.85rem;
+  }
+  .section-head h2{
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    letter-spacing: -0.01em;
+  }
+  .section-head .rule{
+    flex:1;
+    height:1px;
+    background: var(--line);
+  }
+
+  /* ---------- ABOUT ---------- */
+  .about-grid{
+    display:grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 56px;
+  }
+  .about-grid p{ color: var(--ink-soft); font-size: 1.02rem; max-width: 60ch; }
+  .about-grid p + p{ margin-top: 16px; }
+  .spec-sheet{
+    background: var(--bg-panel);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 22px 22px 8px;
+  }
+  .spec-row{
+    display:flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 13px 0;
+    border-bottom: 1px dashed var(--line);
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 0.82rem;
+  }
+  .spec-row:last-child{ border-bottom: none; }
+  .spec-row .k{ color: var(--ink-faint); }
+  .spec-row .v{ color: var(--ink); font-weight: 500; text-align: right; }
+
+  @media (max-width: 800px){
+    .about-grid{ grid-template-columns: 1fr; }
+  }
+
+  /* ---------- SKILLS ---------- */
+  .skill-group{ margin-bottom: 30px; }
+  .skill-group:last-child{ margin-bottom: 0; }
+  .skill-group .label{
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--ink-faint);
+    letter-spacing: 0.04em;
+    margin-bottom: 14px;
+    display:block;
+  }
+  .chip-row{ display:flex; flex-wrap: wrap; gap: 10px; }
+  .chip{
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 0.82rem;
+    padding: 8px 14px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--bg-panel);
+    color: var(--ink-soft);
+    transition: border-color .15s ease, color .15s ease;
+  }
+  .chip:hover{ border-color: var(--accent); color: var(--ink); }
+
+  /* ---------- PROJECTS ---------- */
+  .project-grid{
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  @media (max-width: 800px){
+    .project-grid{ grid-template-columns: 1fr; }
+  }
+  .project-card{
+    background: var(--bg-panel);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 26px 26px 24px;
+    display:flex;
+    flex-direction: column;
+    transition: border-color .15s ease, transform .15s ease;
+  }
+  .project-card:hover{ border-color: var(--accent); transform: translateY(-2px); }
+  .project-card .meta{
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--ink-faint);
+    margin-bottom: 14px;
+  }
+  .project-card .meta .ver{ color: var(--accent); }
+  .project-card h3{ font-size: 1.2rem; margin-bottom: 8px; }
+  .project-card .pitch{ color: var(--ink-soft); font-size: 0.95rem; flex:1; }
+  .project-card .stack{
+    display:flex; flex-wrap:wrap; gap:8px;
+    margin: 16px 0 18px;
+  }
+  .project-card .stack span{
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--ink-soft);
+    background: var(--bg);
+    border: 1px solid var(--line);
+    padding: 4px 9px;
+    border-radius: var(--radius);
+  }
+  .project-links{ display:flex; gap: 18px; }
+  .project-links a{
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 0.82rem;
+    color: var(--ink);
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 2px;
+    transition: border-color .15s ease, color .15s ease;
+  }
+  .project-links a:hover{ color: var(--accent); border-color: var(--accent); }
+
+  /* ---------- CONTACT ---------- */
+  .contact-grid{
+    display:grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 56px;
+  }
+  @media (max-width: 800px){
+    .contact-grid{ grid-template-columns: 1fr; }
+  }
+  .contact-info p{ color: var(--ink-soft); max-width: 42ch; margin-bottom: 26px; }
+  .contact-links a{
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    padding: 14px 0;
+    border-bottom: 1px dashed var(--line);
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 0.88rem;
+  }
+  .contact-links a:hover{ color: var(--accent); }
+  .contact-links a .arrow{ opacity:0.5; transition: opacity .15s, transform .15s; }
+  .contact-links a:hover .arrow{ opacity:1; transform: translateX(3px); }
+
+  form.contact-form{
+    display:flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .field label{
+    display:block;
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 0.76rem;
+    color: var(--ink-faint);
+    margin-bottom: 7px;
+  }
+  .field input, .field textarea{
+    width:100%;
+    background: var(--bg-panel);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 12px 14px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    color: var(--ink);
+    transition: border-color .15s ease;
+  }
+  .field textarea{ resize: vertical; min-height: 110px; }
+  .field input:focus, .field textarea:focus{ border-color: var(--accent); }
+  .form-note{
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 0.74rem;
+    color: var(--ink-faint);
+    margin-top: -4px;
+  }
+  .form-status{
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 0.85rem;
+    margin: 0;
+    min-height: 1.2em;
+  }
+  .form-status.success{ color: #1B8A57; }
+  .form-status.error{ color: #E0554F; }
+  .btn[disabled]{ opacity: 0.6; cursor: not-allowed; }
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    padding: 32px 0;
+  }
+  .footer-inner{
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--ink-faint);
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .back-top{ color: var(--ink-soft); }
+  .back-top:hover{ color: var(--accent); }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+  }
+
+  /* ---------- PROJECT CARD (now interactive) ---------- */
+  .project-card{ cursor: pointer; text-align: left; width:100%; }
+  .project-card:focus-visible{ outline: 2px solid var(--accent); outline-offset: 4px; }
+  .project-card .open-hint{
+    margin-top: 18px;
+    display:flex; align-items:center; gap:8px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--ink-faint);
+  }
+  .project-card:hover .open-hint{ color: var(--accent); }
+  .project-card .open-hint .arrow{ transition: transform .15s ease; }
+  .project-card:hover .open-hint .arrow{ transform: translateX(3px); }
+
+  /* ---------- PROJECT DETAIL PAGE (full page, bukan popup) ---------- */
+  #mainView.is-hidden{ display:none; }
+  .project-view{ display:none; padding: 56px 0 100px; }
+  .project-view.is-active{ display:block; }
+  .back-link{
+    display:inline-flex; align-items:center; gap:8px;
+    background:none; border:none; cursor:pointer; padding:0;
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    margin-bottom: 40px;
+    transition: color .15s ease;
+  }
+  .back-link:hover{ color: var(--accent); }
+  .page-head{
+    display:flex; justify-content:space-between; align-items:center;
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--ink-faint);
+    margin-bottom: 18px;
+  }
+  .page-head .ver{ color: var(--accent); }
+  .project-view h1{
+    font-size: clamp(1.9rem, 4vw, 2.7rem);
+    letter-spacing: -0.01em;
+    max-width: 28ch;
+    margin-bottom: 48px;
+  }
+  .page-body{ max-width: 720px; }
+  .page-section{ margin-bottom: 34px; }
+  .page-section:last-of-type{ margin-bottom: 0; }
+  .page-section .label{
+    display:block;
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--accent);
+    letter-spacing: 0.04em;
+    margin-bottom: 12px;
+  }
+  .page-section p{ color: var(--ink-soft); font-size: 1.02rem; line-height: 1.7; margin:0; }
+  .page-section ul{ margin: 0; padding-left: 20px; color: var(--ink-soft); font-size: 1rem; line-height: 1.7; }
+  .page-section li{ margin-bottom: 8px; }
+  .page-section li:last-child{ margin-bottom: 0; }
+  .page-stack{ display:flex; flex-wrap:wrap; gap:8px; }
+  .page-stack span{
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--ink-soft);
+    background: var(--bg-panel);
+    border: 1px solid var(--line);
+    padding: 6px 12px;
+    border-radius: var(--radius);
+  }
+  .page-links{ display:flex; gap: 22px; margin-top: 40px; padding-top: 26px; border-top: 1px solid var(--line); }
+  .page-links a{
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 0.88rem;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 2px;
+    transition: border-color .15s ease, color .15s ease;
+  }
+  .page-links a:hover{ color: var(--accent); border-color: var(--accent); }
+
+  /* ---------- DEVELOPER MODE ---------- */
+  #devToggle{
+    position: fixed; right: 20px; bottom: 20px; z-index: 500;
+    display:flex; align-items:center; gap:8px;
+    background: var(--mono-bg); color: var(--mono-ink);
+    border: 1px solid #232B36; border-radius: 999px;
+    padding: 12px 18px;
+    font-family:'IBM Plex Mono', monospace; font-size: 0.82rem;
+    cursor:pointer; box-shadow: 0 14px 30px -12px rgba(16,21,28,0.5);
+    transition: transform .15s ease;
+  }
+  #devToggle:hover{ transform: translateY(-2px); }
+  #devBar{
+    position: sticky; top: 0; z-index: 60;
+    display:none;
+    align-items:center; justify-content:space-between;
+    gap: 12px; flex-wrap: wrap;
+    background: var(--mono-bg); color: var(--mono-ink);
+    font-family:'IBM Plex Mono', monospace; font-size: 0.82rem;
+    padding: 10px 20px;
+  }
+  #devBar.is-active{ display:flex; }
+  #devBar .dev-user{ color: var(--mono-green); }
+  #devBar .dev-actions{ display:flex; gap:10px; flex-wrap:wrap; }
+  #devBar button{
+    font-family:'IBM Plex Mono', monospace; font-size: 0.8rem;
+    border-radius: var(--radius); border: 1px solid #3A4453;
+    background: transparent; color: var(--mono-ink);
+    padding: 7px 13px; cursor:pointer; transition: border-color .15s ease, color .15s ease;
+  }
+  #devBar button:hover{ border-color: var(--mono-green); color: var(--mono-green); }
+  #devBar button.primary{ background: var(--mono-green); color: var(--mono-bg); border-color: var(--mono-green); font-weight:600; }
+
+  #editorView{ display:none; padding: 48px 0 100px; }
+  #editorView.is-active{ display:block; }
+  .editor-section{
+    background: var(--bg-panel); border: 1px solid var(--line); border-radius: var(--radius);
+    padding: 26px; margin-bottom: 26px;
+  }
+  .editor-section h3{ font-size: 1.05rem; margin-bottom: 18px; }
+  .editor-field{ margin-bottom: 16px; }
+  .editor-field label{
+    display:block; font-family:'IBM Plex Mono', monospace; font-size: 0.75rem;
+    color: var(--ink-faint); margin-bottom: 6px;
+  }
+  .editor-field input, .editor-field textarea{
+    width:100%; background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius);
+    padding: 10px 12px; font-family:'Inter', sans-serif; font-size: 0.92rem; color: var(--ink);
+  }
+  .editor-field textarea{ resize: vertical; min-height: 70px; }
+  .editor-grid-2{ display:grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 700px){ .editor-grid-2{ grid-template-columns: 1fr; } }
+  .editor-repeat-item{
+    border: 1px dashed var(--line); border-radius: var(--radius); padding: 18px; margin-bottom: 16px; position:relative;
+  }
+  .editor-repeat-item .remove-btn{
+    position:absolute; top:12px; right:12px;
+    font-family:'IBM Plex Mono', monospace; font-size: 0.72rem;
+    color: #E0554F; background:none; border: 1px solid #E0554F55; border-radius: var(--radius);
+    padding: 4px 9px; cursor:pointer;
+  }
+  .editor-add-btn{
+    font-family:'IBM Plex Mono', monospace; font-size: 0.82rem;
+    color: var(--accent); background: none; border: 1px dashed var(--accent);
+    border-radius: var(--radius); padding: 10px 16px; cursor:pointer; width:100%;
+  }
+  #toast{
+    position: fixed; left: 50%; bottom: 28px; transform: translate(-50%, 20px);
+    background: var(--mono-bg); color: var(--mono-ink);
+    font-family:'IBM Plex Mono', monospace; font-size: 0.85rem;
+    padding: 13px 22px; border-radius: var(--radius); z-index: 600;
+    opacity:0; pointer-events:none; transition: opacity .2s ease, transform .2s ease;
+    border: 1px solid #232B36;
+  }
+  #toast.is-show{ opacity:1; transform: translate(-50%, 0); }
+  #toast.error{ border-color: #E0554F; color: #FF9B95; }
+
+  /* ---------- GLASS EFFECT (ala iOS) ---------- */
+  .glass{
+    background: rgba(255,255,255,0.5);
+    -webkit-backdrop-filter: blur(18px) saturate(180%);
+    backdrop-filter: blur(18px) saturate(180%);
+    border: 1px solid rgba(255,255,255,0.6);
+    box-shadow: 0 8px 30px -14px rgba(16,21,28,0.25), inset 0 1px 0 rgba(255,255,255,0.5);
+  }
+  .glass:hover{ background: rgba(255,255,255,0.68); }
+  .glass-dark{
+    background: rgba(16,21,28,0.55);
+    -webkit-backdrop-filter: blur(18px) saturate(180%);
+    backdrop-filter: blur(18px) saturate(180%);
+    border: 1px solid rgba(255,255,255,0.14);
+    box-shadow: 0 14px 34px -14px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.08);
+  }
+  .glass-dark:hover{ background: rgba(16,21,28,0.68); }
+  header.site-nav{ background: rgba(242,244,247,0.6); -webkit-backdrop-filter: blur(14px) saturate(160%); }
+  .btn-ghost{ background: rgba(255,255,255,0.55); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
+  .chip{ -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); background: rgba(255,255,255,0.6); }
+  .status-badge{ -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); background: rgba(255,255,255,0.55); }
+
+  /* ---------- HERO: foto profil & cover ---------- */
+  .hero{ background-color: var(--bg); }
+  .hero-cover{
+    position:absolute; inset:0; z-index:0;
+    background-size: cover; background-position: center;
+    opacity: 0; transition: opacity .4s ease;
+  }
+  .hero-cover.is-set{ opacity: 1; }
+  .hero-cover::after{
+    content:''; position:absolute; inset:0;
+    background: linear-gradient(180deg, rgba(242,244,247,0.45) 0%, rgba(242,244,247,0.86) 78%, var(--bg) 100%);
+  }
+  .hero-inner{ z-index: 1; }
+  .hero-edit-row{
+    position:absolute; top: 22px; right: 32px; z-index: 5;
+    display:flex; gap:10px;
+  }
+  @media (max-width: 640px){ .hero-edit-row{ right: 20px; } }
+  .hero-edit-btn{
+    display:flex; align-items:center; gap:7px;
+    font-family:'IBM Plex Mono', monospace; font-size: 0.76rem;
+    color: var(--ink); border-radius: 999px; padding: 8px 14px;
+    cursor:pointer; border:none; transition: transform .15s ease;
+  }
+  .hero-edit-btn:hover{ transform: translateY(-1px); }
+  .avatar-frame{
+    position:relative;
+    width: clamp(200px, 24vw, 296px);
+    height: clamp(200px, 24vw, 296px);
+    border-radius: 50%;
+    overflow:hidden; z-index:1;
+    border: 6px solid var(--bg-panel);
+    box-shadow: 0 26px 54px -20px rgba(16,21,28,0.45);
+    background: var(--mono-bg);
+  }
+  .avatar-frame img{ width:100%; height:100%; object-fit: cover; display:none; }
+  .avatar-frame img.is-set{ display:block; }
+  .avatar-frame .avatar-fallback{
+    position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+    font-family:'Space Grotesk', sans-serif; font-weight:700; color: var(--mono-ink); font-size: clamp(2.6rem, 6vw, 4rem);
+  }
+  .avatar-frame.is-editable{ cursor:pointer; }
+  .avatar-frame .avatar-edit-hint{
+    position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+    background: rgba(16,21,28,0.55); color:#fff; font-size: 0.8rem; font-family:'IBM Plex Mono', monospace;
+    opacity:0; transition: opacity .15s ease; text-align:center; line-height:1.3;
+  }
+  .avatar-frame.is-editable:hover .avatar-edit-hint{ opacity:1; }
+  .hero-name{ font-family:'Space Grotesk', sans-serif; font-weight:600; font-size: 1rem; color: var(--ink); }
+  .hero-name .role{ display:block; font-family:'IBM Plex Mono', monospace; font-weight:400; font-size: 0.78rem; color: var(--ink-faint); margin-top:3px; }
+
+  /* ---------- PHOTO MODAL (upload profesional ala LinkedIn) ---------- */
+  .photo-modal{
+    position: fixed; inset:0; z-index: 900;
+    display:none; align-items:center; justify-content:center;
+    background: rgba(16,21,28,0.55); padding: 20px;
+    -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px);
+  }
+  .photo-modal.is-active{ display:flex; }
+  .photo-modal-panel{ width: 100%; max-width: 480px; border-radius: 12px; padding: 22px; color: var(--mono-ink); }
+  .photo-modal-head{ display:flex; align-items:center; justify-content:space-between; margin-bottom: 18px; }
+  .photo-modal-head h3{ font-size: 1.05rem; color: var(--mono-ink); }
+  .photo-modal-head button{
+    background:none; border:none; color: var(--mono-ink); opacity:0.6; cursor:pointer; font-size: 1.1rem; line-height:1;
+  }
+  .photo-modal-head button:hover{ opacity:1; }
+  .photo-drop{
+    border: 1px dashed #3A4453; border-radius: 8px; padding: 18px; text-align:center;
+  }
+  .photo-frame{
+    position:relative; width:100%; margin: 0 auto 14px; overflow:hidden;
+    background: #0A0E13; touch-action: none; cursor: grab; border-radius: 8px;
+  }
+  .photo-frame:active{ cursor: grabbing; }
+  .photo-frame.mode-avatar{ max-width: 220px; aspect-ratio: 1/1; border-radius: 50%; }
+  .photo-frame.mode-cover{ aspect-ratio: 16/6; }
+  .photo-frame.mode-project{ aspect-ratio: 16/9; }
+  .photo-frame img{
+    position:absolute; left:0; top:0; max-width:none; user-select:none; -webkit-user-drag:none; pointer-events:none;
+  }
+  .photo-frame .photo-frame-empty{
+    position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+    color:#7C8B9A; font-family:'IBM Plex Mono', monospace; font-size: 0.78rem; padding: 10px; text-align:center;
+  }
+  .photo-drop-hint{ font-family:'IBM Plex Mono', monospace; font-size: 0.78rem; color:#A9B6C6; margin: 4px 0 0; }
+  .photo-drop-hint button{
+    background:none; border:none; color: var(--mono-green); text-decoration: underline; cursor:pointer; font-family:inherit; font-size:inherit; padding:0;
+  }
+  .photo-controls{ margin-top: 16px; }
+  .photo-controls label{ font-family:'IBM Plex Mono', monospace; font-size: 0.74rem; color:#7C8B9A; display:block; margin-bottom:6px; }
+  .photo-controls input[type=range]{ width:100%; }
+  .photo-hint{ font-size: 0.7rem; color:#5C6979; margin-top:6px; }
+  .photo-modal-actions{ display:flex; justify-content:flex-end; gap:10px; margin-top: 20px; }
+
+  /* ---------- PROJECT CARD: cover foto ---------- */
+  .project-card{ padding: 0 0 24px; overflow:hidden; }
+  .project-card .card-cover{
+    width:100%; aspect-ratio: 16/9; background: linear-gradient(135deg, #1a2230, #10151C); background-size: cover; background-position:center;
+    position:relative; margin-bottom: 18px;
+  }
+  .project-card .card-cover::after{ content:''; position:absolute; inset:0; background: linear-gradient(180deg, rgba(16,21,28,0) 55%, rgba(16,21,28,0.12)); }
+  .project-card .card-body{ padding: 0 26px 0; display:flex; flex-direction:column; flex:1; }
+  .project-card .meta{ margin-top: 2px; }
+
+  /* ---------- STORY PAGE (ala Medium) ---------- */
+  .story-cover{
+    width:100%; aspect-ratio: 21/9; background-size:cover; background-position:center;
+    border-radius: var(--radius); margin-bottom: 40px; background-color:#e4e8ee;
+    display:none;
+  }
+  .story-cover.is-set{ display:block; }
+  .story-byline{
+    display:flex; align-items:center; gap:12px; margin: -12px 0 30px;
+    font-family:'IBM Plex Mono', monospace; font-size: 0.82rem; color: var(--ink-faint);
+  }
+  .story-byline .story-avatar{
+    width:36px; height:36px; border-radius:50%; object-fit:cover; background: var(--mono-bg); flex-shrink:0;
+  }
+  .story-byline .story-author{ color: var(--ink); font-weight:500; }
+  .story-byline .dot::before{ content:'·'; margin: 0 6px; }
+  .page-body p.dropcap::first-letter{
+    font-family:'Space Grotesk', sans-serif; font-weight:700; font-size: 3.6rem; float:left;
+    line-height: 0.82; padding: 4px 8px 0 0; color: var(--accent);
+  }
+  .pull-quote{
+    font-family:'Space Grotesk', sans-serif; font-weight:600; font-size: 1.5rem; line-height:1.4;
+    color: var(--ink); border-left: 3px solid var(--accent); padding: 4px 0 4px 24px; margin: 40px 0;
+    max-width: 620px; letter-spacing: -0.01em;
+  }
+  .story-gallery{ margin: 34px 0; }
+  .story-gallery figure{ margin:0 0 28px; }
+  .story-gallery img{ width:100%; border-radius: var(--radius); display:block; }
+  .story-gallery figcaption{
+    font-family:'IBM Plex Mono', monospace; font-size: 0.78rem; color: var(--ink-faint); text-align:center; margin-top:10px;
+  }
+  .story-engage{
+    display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:14px;
+    margin-top: 44px; padding-top: 24px; border-top: 1px solid var(--line);
+  }
+  .clap-btn{
+    display:flex; align-items:center; gap:10px; border-radius: 999px; padding: 10px 18px;
+    border:none; cursor:pointer; font-family:'IBM Plex Mono', monospace; font-size: 0.86rem; color: var(--ink);
+    transition: transform .12s ease;
+  }
+  .clap-btn:active{ transform: scale(0.94); }
+  .clap-btn .clap-icon{ font-size: 1.05rem; transition: transform .18s ease; }
+  .clap-btn.is-bump .clap-icon{ transform: scale(1.35) rotate(-8deg); }
+  .clap-count{ font-weight:600; }
+  .share-row{ display:flex; gap: 10px; }
+  .share-row a, .share-row button{
+    display:flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:50%;
+    border: 1px solid var(--line); background: var(--bg-panel); color: var(--ink-soft); cursor:pointer;
+    font-family:'IBM Plex Mono', monospace; font-size: 0.9rem; transition: border-color .15s, color .15s;
+  }
+  .share-row a:hover, .share-row button:hover{ border-color: var(--accent); color: var(--accent); }
+  .read-meta{ display:flex; gap:14px; align-items:center; }
+
+</style>
+
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="wrap nav-inner">
+    <div class="logo"><img class="logo-mark" src="/assets/logo.png" alt="Logo Faiz.portfolio"> <span id="siteLogoText">Faiz.portfolio</span></div>
+    <nav class="links">
+      <a href="#about">// about</a>
+      <a href="#skills">// skills</a>
+      <a href="#projects">// projects</a>
+      <a href="#contact">// contact</a>
+    </nav>
+    <div class="status-badge"><span class="pulse"></span><span class="txt">open to work</span></div>
+  </div>
+</header>
+
+<div id="devBar" class="glass-dark">
+  <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;width:100%;">
+    <span>🔧 Developer: <span class="dev-user" id="devUserLabel"></span></span>
+    <div class="dev-actions">
+      <button type="button" id="devEditBtn">✏️ Edit Konten</button>
+      <button type="button" id="devLogoutBtn">Keluar</button>
+    </div>
+  </div>
+</div>
+
+<div id="mainView">
+<section class="hero">
+  <div class="hero-cover" id="heroCoverLayer"></div>
+  <div class="hero-edit-row" id="heroEditRow" style="display:none;">
+    <button type="button" class="hero-edit-btn glass" id="editCoverBtn">🖼️ Edit cover</button>
+  </div>
+  <div class="wrap hero-inner">
+    <div>
+      <span class="eyebrow mono reveal-hero" id="heroEyebrow"></span>
+      <h1 class="reveal-hero"><span id="heroTitlePre"></span><span class="accent" id="heroTitleAccent"></span><span id="heroTitlePost"></span></h1>
+      <p class="lede reveal-hero" id="heroLede"></p>
+      <div class="cta-row reveal-hero">
+        <a href="#projects" class="btn btn-primary">Lihat proyek →</a>
+        <a href="#contact" class="btn btn-ghost">Hubungi saya</a>
+      </div>
+    </div>
+
+    <div class="hero-showcase">
+      <div class="hero-photo-card reveal-hero">
+        <div class="hero-photo-glow" aria-hidden="true"></div>
+        <div class="avatar-frame" id="avatarFrame">
+          <img id="avatarImg" alt="Foto profil">
+          <span class="avatar-fallback" id="avatarFallback"></span>
+          <div class="avatar-edit-hint" id="avatarEditHint" style="display:none;">Ganti<br>foto</div>
+        </div>
+        <div class="hero-name-chip glass">
+          <div class="hero-name">
+            <span id="heroNameText"></span>
+            <span class="role" id="heroRoleText"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-glass-card glass reveal-hero">
+        <div class="glass-row">
+          <span class="glass-icon" aria-hidden="true">◆</span>
+          <div class="glass-copy">
+            <span class="glass-label mono">whoami</span>
+            <span class="glass-value" id="gcWhoami"></span>
+          </div>
+        </div>
+        <div class="glass-row">
+          <span class="glass-icon" aria-hidden="true">◎</span>
+          <div class="glass-copy">
+            <span class="glass-label mono">focus</span>
+            <span class="glass-value" id="gcFocus"></span>
+          </div>
+        </div>
+        <div class="glass-row">
+          <span class="glass-icon" aria-hidden="true">▲</span>
+          <div class="glass-copy">
+            <span class="glass-label mono">availability</span>
+            <span class="glass-value tag" id="gcAvailability"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="idx mono">01</span>
+      <h2>Tentang</h2>
+      <span class="rule"></span>
+    </div>
+    <div class="about-grid">
+      <div class="reveal">
+        <p id="aboutP1"></p>
+        <p id="aboutP2"></p>
+      </div>
+      <div class="spec-sheet mono reveal" id="specSheet"></div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="idx mono">02</span>
+      <h2>Skills &amp; Tools</h2>
+      <span class="rule"></span>
+    </div>
+    <div id="skillsContainer"></div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="idx mono">03</span>
+      <h2>Proyek</h2>
+      <span class="rule"></span>
+    </div>
+    <div class="project-grid" id="projectGrid"></div>
+    <p class="mono" style="margin-top:22px; font-size:0.78rem; color:var(--ink-faint);">// klik salah satu kartu untuk lihat detail lengkap proyeknya</p>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap contact-grid">
+    <div class="contact-info reveal">
+      <div class="section-head" style="margin-bottom:24px;">
+        <span class="idx mono">04</span>
+        <h2>Kontak</h2>
+      </div>
+      <p id="contactIntro"></p>
+      <div class="contact-links" id="contactLinks"></div>
+    </div>
+
+    <form class="contact-form reveal" id="contactForm">
+      <div class="field">
+        <label for="name">Nama</label>
+        <input id="name" name="name" type="text" required>
+      </div>
+      <div class="field">
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" required>
+      </div>
+      <div class="field">
+        <label for="message">Pesan</label>
+        <textarea id="message" name="message" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary" style="align-self:flex-start;" id="submitBtn">Kirim pesan →</button>
+      <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+      <p class="form-note">// form ini pakai EmailJS. Isi Service ID, Template ID, dan Public Key EmailJS-mu di bagian akhir file ini (cari komentar "GANTI DENGAN MILIKMU").</p>
+    </form>
+  </div>
+</section>
+</div>
+
+<div class="project-view" id="projectView">
+  <div class="wrap">
+    <button class="back-link mono" id="backToProjects">← Kembali ke semua proyek</button>
+
+    <div class="story-cover" id="storyCover"></div>
+    <div class="hero-edit-row" id="projectCoverEditRow" style="display:none;position:static;justify-content:flex-end;margin:-24px 0 24px;">
+      <button type="button" class="hero-edit-btn glass" id="editProjectCoverBtn">🖼️ Ganti cover proyek</button>
+    </div>
+
+    <div class="page-head">
+      <span class="ver" id="pageVer"></span>
+      <span id="pageYear"></span>
+    </div>
+    <h1 id="pageTitle"></h1>
+
+    <div class="story-byline">
+      <img class="story-avatar" id="storyAvatar" alt="">
+      <span class="story-author" id="storyAuthor"></span>
+      <span class="dot"></span>
+      <span id="storyReadTime"></span>
+      <span class="dot"></span>
+      <span id="storyDate"></span>
+    </div>
+
+    <div class="page-body">
+      <div class="page-section">
+        <span class="label">// challenge</span>
+        <p id="pageChallenge" class="dropcap"></p>
+      </div>
+      <div class="page-section">
+        <span class="label">// pendekatan</span>
+        <p id="pageApproach"></p>
+      </div>
+
+      <blockquote class="pull-quote" id="pagePullQuote" style="display:none;"></blockquote>
+
+      <div class="page-section">
+        <span class="label">// hasil</span>
+        <ul id="pageResults"></ul>
+      </div>
+
+      <div class="story-gallery" id="storyGallery"></div>
+
+      <div class="page-section">
+        <span class="label">// tech stack</span>
+        <div class="page-stack" id="pageStack"></div>
+      </div>
+      <div class="page-links" id="pageLinks"></div>
+
+      <div class="story-engage">
+        <button type="button" class="clap-btn glass" id="clapBtn">
+          <span class="clap-icon">👏</span>
+          <span class="clap-count" id="clapCount">0</span>
+        </button>
+        <div class="share-row">
+          <button type="button" id="copyLinkBtn" title="Salin link">🔗</button>
+          <a id="shareTwitterBtn" href="#" target="_blank" rel="noopener" title="Bagikan ke X/Twitter">𝕏</a>
+          <a id="shareLinkedinBtn" href="#" target="_blank" rel="noopener" title="Bagikan ke LinkedIn">in</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="editorView">
+  <div class="wrap" style="max-width:820px;">
+    <button class="back-link mono" id="editorBack">← Batal &amp; kembali</button>
+    <h1 style="margin-bottom:8px;">Edit Konten Porto</h1>
+    <p class="mono" style="font-size:0.8rem;color:var(--ink-faint);margin-bottom:32px;">Ubah apapun di bawah ini, lalu klik "Simpan &amp; Publish" — perubahan langsung tayang untuk semua pengunjung.</p>
+
+    <div class="editor-section">
+      <h3 class="mono">// hero</h3>
+      <div class="editor-field"><label>Eyebrow</label><input id="edHeroEyebrow"></div>
+      <div class="editor-grid-2">
+        <div class="editor-field"><label>Judul (sebelum kata aksen)</label><input id="edHeroTitlePre"></div>
+        <div class="editor-field"><label>Kata aksen (warna biru)</label><input id="edHeroTitleAccent"></div>
+      </div>
+      <div class="editor-field"><label>Judul (setelah kata aksen)</label><input id="edHeroTitlePost"></div>
+      <div class="editor-field"><label>Deskripsi singkat (lede)</label><textarea id="edHeroLede"></textarea></div>
+      <label style="display:block;font-family:'IBM Plex Mono',monospace;font-size:0.75rem;color:var(--ink-faint);margin:18px 0 10px;">// kartu kaca di samping foto</label>
+      <div class="editor-field"><label>whoami</label><input id="edShowcaseWhoami"></div>
+      <div class="editor-field"><label>focus</label><input id="edShowcaseFocus"></div>
+      <div class="editor-field"><label>availability</label><input id="edShowcaseAvailability"></div>
+    </div>
+
+    <div class="editor-section">
+      <h3 class="mono">// tentang</h3>
+      <div class="editor-field"><label>Paragraf 1</label><textarea id="edAboutP1"></textarea></div>
+      <div class="editor-field"><label>Paragraf 2</label><textarea id="edAboutP2"></textarea></div>
+      <label style="display:block;font-family:'IBM Plex Mono',monospace;font-size:0.75rem;color:var(--ink-faint);margin-bottom:10px;">Spec sheet</label>
+      <div id="specEditorList"></div>
+      <button type="button" class="editor-add-btn" id="addSpecBtn">+ Tambah baris spek</button>
+    </div>
+
+    <div class="editor-section">
+      <h3 class="mono">// skills</h3>
+      <div id="skillsEditorList"></div>
+      <button type="button" class="editor-add-btn" id="addSkillGroupBtn">+ Tambah grup skill</button>
+    </div>
+
+    <div class="editor-section">
+      <h3 class="mono">// proyek</h3>
+      <div id="projectsEditorList"></div>
+      <button type="button" class="editor-add-btn" id="addProjectBtn">+ Tambah proyek baru</button>
+    </div>
+
+    <div class="editor-section">
+      <h3 class="mono">// kontak</h3>
+      <div class="editor-field"><label>Paragraf intro</label><textarea id="edContactIntro"></textarea></div>
+      <div class="editor-grid-2">
+        <div class="editor-field"><label>Email</label><input id="edContactEmail"></div>
+        <div class="editor-field"><label>GitHub URL</label><input id="edContactGithub"></div>
+      </div>
+      <div class="editor-field"><label>LinkedIn URL</label><input id="edContactLinkedin"></div>
+    </div>
+
+    <div class="editor-section">
+      <h3 class="mono">// profil</h3>
+      <p class="mono" style="font-size:0.76rem;color:var(--ink-faint);margin-bottom:14px;">Foto profil &amp; cover diedit langsung lewat tombol di halaman utama (avatar &amp; "🖼️ Edit cover" di hero), bukan di sini.</p>
+      <div class="editor-grid-2">
+        <div class="editor-field"><label>Nama tampilan</label><input id="edProfileName"></div>
+        <div class="editor-field"><label>Role / jabatan singkat</label><input id="edProfileRole"></div>
+      </div>
+    </div>
+
+    <div class="editor-section">
+      <h3 class="mono">// situs</h3>
+      <div class="editor-grid-2">
+        <div class="editor-field"><label>Nama/logo situs</label><input id="edSiteName"></div>
+        <div class="editor-field"><label>Teks footer</label><input id="edFooterNote"></div>
+      </div>
+    </div>
+
+    <div style="display:flex;gap:14px;flex-wrap:wrap;">
+      <button type="button" class="btn btn-primary" id="devPublishBtn">Simpan &amp; Publish</button>
+      <button type="button" class="btn btn-ghost" id="devCancelBtn">Batal</button>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap footer-inner">
+    <span id="footerNote"></span>
+    <a href="#" class="back-top">↑ kembali ke atas</a>
+  </div>
+</footer>
+
+<div class="photo-modal" id="photoModal">
+  <div class="photo-modal-panel glass-dark">
+    <div class="photo-modal-head">
+      <h3 id="photoModalTitle">Ganti foto</h3>
+      <button type="button" id="photoModalCloseBtn">✕</button>
+    </div>
+    <div class="photo-drop">
+      <input type="file" id="photoFileInput" accept="image/png,image/jpeg,image/webp,image/gif" hidden>
+      <div class="photo-frame" id="photoFrame">
+        <div class="photo-frame-empty" id="photoFrameEmpty">Belum ada foto dipilih</div>
+        <img id="photoFrameImg" alt="Pratinjau foto" style="display:none;">
+      </div>
+      <p class="photo-drop-hint">Seret gambar ke sini, atau <button type="button" id="photoBrowseBtn">pilih file dari perangkat</button></p>
+    </div>
+    <div class="photo-controls" id="photoControls" style="display:none;">
+      <label>🔍 Perbesar / perkecil</label>
+      <input type="range" id="photoZoomRange" min="100" max="260" value="100">
+      <p class="photo-hint mono">// geser (drag) gambar untuk atur posisi di dalam bingkai</p>
+    </div>
+    <div class="photo-modal-actions">
+      <button type="button" class="btn btn-ghost glass" id="photoCancelBtn">Batal</button>
+      <button type="button" class="btn btn-primary" id="photoSaveBtn" disabled>Simpan foto</button>
+    </div>
+  </div>
+</div>
+
+<button type="button" id="devToggle" class="glass-dark">🔧 Developer</button>
+<div id="toast"></div>
+<script>
+  // ---------- KONTEN DEFAULT (dipakai kalau backend belum punya data) ----------
+  const DEFAULT_CONTENT = {
+    siteName: 'Faiz.portfolio',
+    footerNote: '// built with HTML, CSS, JS · © 2026 Faiz',
+    profile: {
+      name: 'Nadia Pratama',
+      role: 'Software Developer',
+      avatarKey: '',
+      coverKey: ''
+    },
+    hero: {
+      eyebrow: '// backend-leaning full-stack developer',
+      titlePre: 'Membangun sistem yang ',
+      titleAccent: 'jelas dibaca',
+      titlePost: ', bukan cuma jalan.',
+      lede: 'Halo, saya Nadia — developer yang fokus di arsitektur backend, API yang rapi, dan performa yang bisa dipertanggungjawabkan. 4 tahun mengubah spesifikasi berantakan jadi produk yang stabil di production.',
+      showcaseWhoami: 'Nadia Pratama — Software Developer',
+      showcaseFocus: 'Backend systems, API design, database performance',
+      showcaseAvailability: 'Freelance / Full-time'
+    },
+    about: {
+      p1: 'Saya membangun aplikasi web dari sisi backend sampai integrasi frontend, dengan perhatian khusus ke desain API, keandalan sistem, dan kecepatan query. Latar belakang saya di tim produk kecil mengajarkan saya untuk menulis kode yang gampang di-onboarding orang lain — bukan cuma gampang saya pahami sendiri.',
+      p2: 'Di luar kerja, saya senang membedah RFC, ngoprek self-hosted tools, dan menulis catatan teknis singkat tentang bug-bug yang saya temui — supaya versi saya di masa depan tidak mengulang kesalahan yang sama.',
+      spec: [
+        { k: 'lokasi', v: 'Yogyakarta, ID' },
+        { k: 'fokus', v: 'Backend & API design' },
+        { k: 'pengalaman', v: '4 tahun' },
+        { k: 'ketersediaan', v: 'Freelance / full-time' },
+        { k: 'bahasa', v: 'ID, EN' }
+      ]
+    },
+    skills: [
+      { label: '// languages', chips: ['TypeScript', 'Python', 'Go', 'SQL'] },
+      { label: '// frameworks & libraries', chips: ['Node.js / Express', 'Django', 'React', 'FastAPI'] },
+      { label: '// infra & tools', chips: ['PostgreSQL', 'Redis', 'Docker', 'AWS', 'Git / CI-CD'] }
+    ],
+    projects: [
+      {
+        id: 'ledger', title: 'Ledger — API akuntansi ringan', version: 'v1.3', year: '2025',
+        pitch: 'REST API untuk pencatatan transaksi UMKM dengan rekonsiliasi otomatis dan laporan arus kas real-time.',
+        challenge: 'Mitra UMKM mencatat transaksi secara manual di spreadsheet terpisah-pisah, sehingga rekonsiliasi kas memakan waktu berhari-hari dan rawan salah hitung saat volume transaksi naik.',
+        approach: 'Membangun REST API dengan Go untuk throughput tinggi, memakai PostgreSQL sebagai sumber kebenaran transaksi dan Redis untuk cache saldo real-time. Rekonsiliasi berjalan sebagai job terjadwal yang membandingkan mutasi bank dengan catatan internal.',
+        results: ['Waktu rekonsiliasi turun dari 2 hari menjadi kurang dari 10 menit', 'Menangani lebih dari 50.000 transaksi/bulan tanpa penurunan performa', 'Dipakai oleh 12 mitra UMKM sejak peluncuran'],
+        stack: ['Go', 'PostgreSQL', 'Redis', 'Docker'], links: { live: '#', code: '#' },
+        coverKey: '', pullQuote: 'Rekonsiliasi yang tadinya makan waktu 2 hari sekarang selesai dalam hitungan menit.', gallery: []
+      },
+      {
+        id: 'routewise', title: 'Routewise — optimisasi rute pengiriman', version: 'v2.0', year: '2024',
+        pitch: 'Layanan yang menghitung rute pengiriman paling efisien untuk armada kecil, dipakai 3 mitra logistik lokal.',
+        challenge: 'Armada pengiriman kecil menentukan rute secara manual berdasarkan pengalaman kurir, yang berujung pada jarak tempuh berlebih dan keterlambatan saat titik antar bertambah banyak dalam satu hari.',
+        approach: 'Membangun layanan optimisasi rute dengan Python dan FastAPI di backend, memakai algoritma nearest-neighbor plus 2-opt untuk mendekati rute optimal secara cepat, dan dashboard React agar dispatcher bisa menyesuaikan urutan secara manual bila perlu.',
+        results: ['Rata-rata jarak tempuh per kurir turun 18%', 'Estimasi waktu tiba meleset kurang dari 7 menit dari rencana', 'Diadopsi oleh 3 mitra logistik lokal dalam 6 bulan pertama'],
+        stack: ['Python', 'FastAPI', 'React', 'PostgreSQL'], links: { live: '#', code: '#' },
+        coverKey: '', pullQuote: '', gallery: []
+      },
+      {
+        id: 'notary', title: 'Notary — antrian dokumen digital', version: 'v1.0', year: '2023',
+        pitch: 'Sistem antrian dan validasi dokumen untuk kantor layanan publik, mengurangi waktu tunggu rata-rata 40%.',
+        challenge: 'Warga harus antre fisik dan dokumennya sering ditolak di loket karena tidak lengkap, sehingga banyak kunjungan berulang dan antrean menumpuk di jam sibuk.',
+        approach: 'Membangun sistem antrian digital berbasis Node.js dan Express, dengan validasi kelengkapan dokumen di sisi klien sebelum nomor antrean diterbitkan, serta notifikasi status lewat SMS/email agar warga tidak perlu menunggu di tempat.',
+        results: ['Waktu tunggu rata-rata turun 40%', 'Penolakan dokumen di loket turun lebih dari separuh', 'Diterapkan di 2 kantor layanan sebagai proyek percontohan'],
+        stack: ['Node.js', 'Express', 'MongoDB'], links: { live: '#', code: '#' },
+        coverKey: '', pullQuote: '', gallery: []
+      },
+      {
+        id: 'pulse', title: 'Pulse — monitoring uptime sederhana', version: 'v1.1', year: '2023',
+        pitch: 'Dashboard monitoring status layanan dengan notifikasi ke email dan webhook saat terjadi downtime.',
+        challenge: 'Tim kecil tidak punya cara murah untuk memantau uptime beberapa layanan internal, dan sering baru tahu ada gangguan setelah pengguna melapor.',
+        approach: 'Membangun layanan health-check ringan dengan TypeScript yang mem-ping endpoint secara berkala dari beberapa region lewat container Docker, lalu mengirim notifikasi otomatis ke email dan webhook Slack begitu ambang batas kegagalan tercapai.',
+        results: ['Waktu deteksi downtime turun dari hitungan jam ke di bawah 2 menit', 'Dipakai untuk memonitor 9 layanan internal', 'Biaya operasional jauh lebih murah dibanding tools SaaS sejenis'],
+        stack: ['TypeScript', 'Docker', 'AWS'], links: { live: '#', code: '#' },
+        coverKey: '', pullQuote: '', gallery: []
+      }
+    ],
+    contact: {
+      intro: 'Terbuka untuk peran full-time maupun proyek freelance. Ceritakan sedikit tentang kebutuhannya, saya balas dalam 1–2 hari kerja.',
+      email: 'halo@nadiapratama.dev',
+      github: 'https://github.com/',
+      linkedin: 'https://linkedin.com/'
+    }
+  };
+
+  const API_URL = '/api/content';
+  const UPLOAD_URL = '/api/upload';
+  const IMAGE_URL = '/api/image';
+  const CLAP_URL = '/api/clap';
+  let content = null;
+
+  function esc(s){ const d = document.createElement('div'); d.textContent = (s == null ? '' : String(s)); return d.innerHTML; }
+  function escAttr(s){ return esc(s).replace(/"/g, '&quot;'); }
+
+  function imgUrl(key){ return key ? (IMAGE_URL + '?key=' + encodeURIComponent(key)) : ''; }
+
+  function initials(name){
+    return (name || '?').trim().split(/\s+/).slice(0, 2).map(w => w[0] ? w[0].toUpperCase() : '').join('') || '?';
+  }
+
+  function estimateReadTime(...parts){
+    const words = parts.filter(Boolean).join(' ').trim().split(/\s+/).filter(Boolean).length;
+    return Math.max(1, Math.round(words / 200));
+  }
+
+  // ---------- SIMPAN PERUBAHAN KONTEN LANGSUNG (dipakai buat foto profil/cover/cover proyek) ----------
+  async function saveContentPatch(mutatorFn){
+    const user = window.netlifyIdentity && netlifyIdentity.currentUser();
+    if(!user){ showToast('Kamu harus login dulu sebagai developer.', true); return false; }
+    const backup = JSON.parse(JSON.stringify(content));
+    try{
+      mutatorFn(content);
+      const token = await user.jwt();
+      const res = await fetch(API_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + token },
+        body: JSON.stringify(content)
+      });
+      if(!res.ok) throw new Error('save failed');
+      renderAll();
+      return true;
+    } catch(e){
+      content = backup;
+      showToast('Gagal menyimpan perubahan. Coba lagi.', true);
+      return false;
+    }
+  }
+
+  function renderProfile(){
+    const p = content.profile;
+    const dev = isDev();
+
+    // avatar
+    const avatarImg = document.getElementById('avatarImg');
+    const avatarFallback = document.getElementById('avatarFallback');
+    if(p.avatarKey){
+      avatarImg.src = imgUrl(p.avatarKey);
+      avatarImg.classList.add('is-set');
+      avatarFallback.style.display = 'none';
+    } else {
+      avatarImg.classList.remove('is-set');
+      avatarFallback.style.display = 'flex';
+      avatarFallback.textContent = initials(p.name);
+    }
+    document.getElementById('avatarFrame').classList.toggle('is-editable', dev);
+    document.getElementById('avatarEditHint').style.display = dev ? 'flex' : 'none';
+
+    // cover
+    const coverLayer = document.getElementById('heroCoverLayer');
+    if(p.coverKey){
+      coverLayer.style.backgroundImage = "url('" + imgUrl(p.coverKey) + "')";
+      coverLayer.classList.add('is-set');
+    } else {
+      coverLayer.classList.remove('is-set');
+    }
+    document.getElementById('heroEditRow').style.display = dev ? 'flex' : 'none';
+
+    document.getElementById('heroNameText').textContent = p.name || content.siteName;
+    document.getElementById('heroRoleText').textContent = p.role || '';
+  }
+
+  // ---------- RENDER SITUS DARI content ----------
+  function renderAll(){
+    if(!content.profile) content.profile = { name: content.siteName, role: '', avatarKey: '', coverKey: '' };
+    document.title = content.siteName + ' — Software Developer';
+    document.getElementById('siteLogoText').textContent = content.siteName;
+
+    renderProfile();
+
+    document.getElementById('heroEyebrow').textContent = content.hero.eyebrow;
+    document.getElementById('heroTitlePre').textContent = content.hero.titlePre;
+    document.getElementById('heroTitleAccent').textContent = content.hero.titleAccent;
+    document.getElementById('heroTitlePost').textContent = content.hero.titlePost;
+    document.getElementById('heroLede').textContent = content.hero.lede;
+    document.getElementById('gcWhoami').textContent = content.hero.showcaseWhoami || '';
+    document.getElementById('gcFocus').textContent = content.hero.showcaseFocus || '';
+    document.getElementById('gcAvailability').textContent = content.hero.showcaseAvailability || '';
+
+    document.getElementById('aboutP1').textContent = content.about.p1;
+    document.getElementById('aboutP2').textContent = content.about.p2;
+    document.getElementById('specSheet').innerHTML = content.about.spec.map(r =>
+      '<div class="spec-row"><span class="k">' + esc(r.k) + '</span><span class="v">' + esc(r.v) + '</span></div>'
+    ).join('');
+
+    document.getElementById('skillsContainer').innerHTML = content.skills.map((g, i) =>
+      '<div class="skill-group reveal" style="animation-delay:' + (i * 70) + 'ms"><span class="label mono">' + esc(g.label) + '</span><div class="chip-row">' +
+      g.chips.map(c => '<span class="chip">' + esc(c) + '</span>').join('') + '</div></div>'
+    ).join('');
+
+    renderProjectGrid();
+
+    document.getElementById('contactIntro').textContent = content.contact.intro;
+    document.getElementById('contactLinks').innerHTML =
+      '<a href="mailto:' + escAttr(content.contact.email) + '">Email <span class="arrow">↗</span></a>' +
+      '<a href="' + escAttr(content.contact.github) + '" target="_blank" rel="noopener">GitHub <span class="arrow">↗</span></a>' +
+      '<a href="' + escAttr(content.contact.linkedin) + '" target="_blank" rel="noopener">LinkedIn <span class="arrow">↗</span></a>';
+
+    document.getElementById('footerNote').textContent = content.footerNote;
+
+    route();
+    playHeroReveal();
+    initScrollReveal();
+  }
+
+  function renderProjectGrid(){
+    document.getElementById('projectGrid').innerHTML = content.projects.map((p, i) =>
+      '<a class="project-card reveal" style="animation-delay:' + (i * 70) + 'ms" href="#/proyek/' + encodeURIComponent(p.id) + '">' +
+        '<div class="card-cover"' + (p.coverKey ? ' style="background-image:url(\'' + imgUrl(p.coverKey) + '\')"' : '') + '></div>' +
+        '<div class="card-body">' +
+        '<div class="meta"><span class="ver">' + esc(p.version) + '</span><span>' + esc(p.year) + '</span></div>' +
+        '<h3>' + esc(p.title) + '</h3>' +
+        '<p class="pitch">' + esc(p.pitch) + '</p>' +
+        '<div class="stack">' + p.stack.map(s => '<span>' + esc(s) + '</span>').join('') + '</div>' +
+        '<div class="open-hint mono"><span>Baca selengkapnya</span><span class="arrow">→</span></div>' +
+        '</div>' +
+      '</a>'
+    ).join('');
+  }
+
+  let currentProjectId = null;
+
+  function fillProjectPage(id){
+    const p = content.projects.find(x => x.id === id);
+    if(!p) return false;
+    currentProjectId = p.id;
+
+    document.getElementById('pageVer').textContent = p.version;
+    document.getElementById('pageYear').textContent = p.year;
+    document.getElementById('pageTitle').textContent = p.title;
+    document.getElementById('pageChallenge').textContent = p.challenge;
+    document.getElementById('pageApproach').textContent = p.approach;
+    document.getElementById('pageResults').innerHTML = p.results.map(r => '<li>' + esc(r) + '</li>').join('');
+    document.getElementById('pageStack').innerHTML = p.stack.map(s => '<span>' + esc(s) + '</span>').join('');
+    document.getElementById('pageLinks').innerHTML =
+      '<a href="' + escAttr(p.links.live) + '">Live demo →</a><a href="' + escAttr(p.links.code) + '">Kode sumber →</a>';
+
+    // cover ala Medium
+    const storyCover = document.getElementById('storyCover');
+    if(p.coverKey){
+      storyCover.style.backgroundImage = "url('" + imgUrl(p.coverKey) + "')";
+      storyCover.classList.add('is-set');
+    } else {
+      storyCover.classList.remove('is-set');
+    }
+    document.getElementById('projectCoverEditRow').style.display = isDev() ? 'flex' : 'none';
+
+    // byline
+    const prof = content.profile || {};
+    const storyAvatar = document.getElementById('storyAvatar');
+    storyAvatar.src = prof.avatarKey ? imgUrl(prof.avatarKey) : 'data:image/svg+xml;utf8,' + encodeURIComponent(
+      '<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36"><rect width="100%" height="100%" fill="%2310151C"/></svg>'
+    );
+    document.getElementById('storyAuthor').textContent = prof.name || content.siteName;
+    document.getElementById('storyReadTime').textContent = estimateReadTime(p.challenge, p.approach, p.pitch, (p.results||[]).join(' ')) + ' menit baca';
+    document.getElementById('storyDate').textContent = p.year;
+
+    // pull quote ala Medium
+    const pq = document.getElementById('pagePullQuote');
+    if(p.pullQuote){ pq.textContent = '“' + p.pullQuote + '”'; pq.style.display = 'block'; }
+    else { pq.style.display = 'none'; }
+
+    // galeri gambar di dalam cerita
+    renderStoryGallery(p);
+
+    // clap
+    initClap(p.id);
+
+    // share
+    const url = location.origin + location.pathname + '#/proyek/' + encodeURIComponent(p.id);
+    document.getElementById('copyLinkBtn').onclick = () => {
+      navigator.clipboard && navigator.clipboard.writeText(url).then(() => showToast('Link disalin ✓'));
+    };
+    document.getElementById('shareTwitterBtn').href = 'https://twitter.com/intent/tweet?url=' + encodeURIComponent(url) + '&text=' + encodeURIComponent(p.title);
+    document.getElementById('shareLinkedinBtn').href = 'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(url);
+
+    return true;
+  }
+
+  function renderStoryGallery(p){
+    const wrap = document.getElementById('storyGallery');
+    const items = p.gallery || [];
+    let html = items.map((g, idx) =>
+      '<figure>' +
+        '<img src="' + escAttr(imgUrl(g.key)) + '" alt="' + escAttr(g.caption || p.title) + '">' +
+        (isDev() ? '<figcaption><input class="mono gallery-caption-input" data-idx="' + idx + '" value="' + escAttr(g.caption || '') + '" placeholder="// keterangan gambar" style="width:100%;text-align:center;background:none;border:none;font:inherit;color:inherit;"> <button type="button" class="gallery-remove-btn mono" data-idx="' + idx + '" style="border:none;background:none;color:#E0554F;cursor:pointer;">Hapus</button></figcaption>'
+          : (g.caption ? '<figcaption>' + esc(g.caption) + '</figcaption>' : '')) +
+      '</figure>'
+    ).join('');
+    if(isDev()){
+      html += '<button type="button" id="addStoryImageBtn" class="editor-add-btn">+ Tambah gambar ke cerita</button>';
+    }
+    wrap.innerHTML = html;
+
+    if(isDev()){
+      document.getElementById('addStoryImageBtn').addEventListener('click', () => openPhotoModal('gallery', { projectId: p.id }));
+      wrap.querySelectorAll('.gallery-caption-input').forEach(inp => {
+        inp.addEventListener('change', () => {
+          const idx = Number(inp.dataset.idx);
+          saveContentPatch(c => {
+            const proj = c.projects.find(x => x.id === p.id);
+            if(proj && proj.gallery && proj.gallery[idx]) proj.gallery[idx].caption = inp.value.trim();
+          }).then(() => showProject(p.id));
+        });
+      });
+      wrap.querySelectorAll('.gallery-remove-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const idx = Number(btn.dataset.idx);
+          saveContentPatch(c => {
+            const proj = c.projects.find(x => x.id === p.id);
+            if(proj && proj.gallery) proj.gallery.splice(idx, 1);
+          }).then(() => showProject(p.id));
+        });
+      });
+    }
+  }
+
+  // ---------- CLAP ALA MEDIUM ----------
+  async function initClap(projectId){
+    const btn = document.getElementById('clapBtn');
+    const countEl = document.getElementById('clapCount');
+    countEl.textContent = '…';
+    try{
+      const res = await fetch(CLAP_URL + '?id=' + encodeURIComponent(projectId));
+      const data = await res.json();
+      countEl.textContent = data.count || 0;
+    } catch(e){ countEl.textContent = '0'; }
+
+    btn.onclick = async () => {
+      btn.classList.remove('is-bump'); void btn.offsetWidth; btn.classList.add('is-bump');
+      const current = parseInt(countEl.textContent, 10) || 0;
+      countEl.textContent = current + 1; // optimistic
+      try{
+        const res = await fetch(CLAP_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ id: projectId, amount: 1 })
+        });
+        const data = await res.json();
+        if(typeof data.count === 'number') countEl.textContent = data.count;
+      } catch(e){ /* biarkan hitungan optimistic kalau offline */ }
+    };
+  }
+
+  // ---------- MEMUAT & MENYIMPAN KONTEN DARI/KE BACKEND ----------
+  async function loadContent(){
+    try{
+      const res = await fetch(API_URL);
+      if(res.ok){
+        const data = await res.json();
+        content = (data && Object.keys(data).length) ? data : DEFAULT_CONTENT;
+      } else {
+        content = DEFAULT_CONTENT;
+      }
+    } catch(e){
+      content = DEFAULT_CONTENT;
+    }
+    renderAll();
+  }
+
+  // ---------- NAVIGASI: home / halaman proyek / editor ----------
+  const mainView = document.getElementById('mainView');
+  const projectView = document.getElementById('projectView');
+  const editorView = document.getElementById('editorView');
+
+  function setView(view, scrollToId){
+    mainView.classList.toggle('is-hidden', view !== 'home');
+    projectView.classList.toggle('is-active', view === 'project');
+    editorView.classList.toggle('is-active', view === 'editor');
+    if(view === 'home' && scrollToId){
+      const t = document.getElementById(scrollToId);
+      if(t){ t.scrollIntoView({ behavior: 'smooth', block: 'start' }); return; }
+    }
+    window.scrollTo({ top: 0 });
+  }
+
+  function showHome(scrollToId){ setView('home', scrollToId); }
+  function showProject(id){
+    const ok = fillProjectPage(id);
+    if(!ok){ showHome(); return; }
+    setView('project');
+  }
+  function showEditor(){
+    openEditorForm();
+    setView('editor');
+  }
+
+  function isDev(){ return !!(window.netlifyIdentity && netlifyIdentity.currentUser()); }
+
+  function route(){
+    if(!content) return;
+    const hash = location.hash;
+    if(hash === '#/edit'){
+      if(isDev()){ showEditor(); } else { location.hash = ''; }
+      return;
+    }
+    const m = hash.match(/^#\/proyek\/(.+)$/);
+    if(m){ showProject(decodeURIComponent(m[1])); }
+    else if(hash.length > 1){ showHome(hash.slice(1)); }
+    else { showHome(); }
+  }
+  window.addEventListener('hashchange', route);
+
+  // ---------- FORM EDITOR: baris berulang (spec / skills / proyek) ----------
+  function specRowHTML(row){
+    row = row || { k: '', v: '' };
+    return '<div class="editor-repeat-item"><button type="button" class="remove-btn" onclick="this.closest(\'.editor-repeat-item\').remove()">Hapus</button>' +
+      '<div class="editor-grid-2">' +
+      '<div class="editor-field"><label>Label</label><input class="spec-k" value="' + escAttr(row.k) + '"></div>' +
+      '<div class="editor-field"><label>Nilai</label><input class="spec-v" value="' + escAttr(row.v) + '"></div>' +
+      '</div></div>';
+  }
+  function skillGroupHTML(g){
+    g = g || { label: '// grup baru', chips: [] };
+    return '<div class="editor-repeat-item"><button type="button" class="remove-btn" onclick="this.closest(\'.editor-repeat-item\').remove()">Hapus</button>' +
+      '<div class="editor-field"><label>Label grup</label><input class="skill-label" value="' + escAttr(g.label) + '"></div>' +
+      '<div class="editor-field"><label>Daftar skill (pisahkan pakai koma)</label><textarea class="skill-chips">' + esc(g.chips.join(', ')) + '</textarea></div>' +
+      '</div>';
+  }
+  function projectItemHTML(p){
+    p = p || { id: '', title: '', version: 'v1.0', year: String(new Date().getFullYear()), pitch: '', challenge: '', approach: '', results: [], stack: [], links: { live: '#', code: '#' }, pullQuote: '', coverKey: '', gallery: [] };
+    return '<div class="editor-repeat-item"><button type="button" class="remove-btn" onclick="this.closest(\'.editor-repeat-item\').remove()">Hapus</button>' +
+      '<div class="editor-grid-2">' +
+      '<div class="editor-field"><label>ID unik (untuk URL, huruf kecil tanpa spasi)</label><input class="proj-id" value="' + escAttr(p.id) + '"></div>' +
+      '<div class="editor-field"><label>Judul</label><input class="proj-title" value="' + escAttr(p.title) + '"></div>' +
+      '</div>' +
+      '<div class="editor-grid-2">' +
+      '<div class="editor-field"><label>Versi</label><input class="proj-version" value="' + escAttr(p.version) + '"></div>' +
+      '<div class="editor-field"><label>Tahun</label><input class="proj-year" value="' + escAttr(p.year) + '"></div>' +
+      '</div>' +
+      '<div class="editor-field"><label>Pitch singkat (di kartu)</label><textarea class="proj-pitch">' + esc(p.pitch) + '</textarea></div>' +
+      '<div class="editor-field"><label>Challenge</label><textarea class="proj-challenge">' + esc(p.challenge) + '</textarea></div>' +
+      '<div class="editor-field"><label>Pendekatan</label><textarea class="proj-approach">' + esc(p.approach) + '</textarea></div>' +
+      '<div class="editor-field"><label>Hasil (satu baris = satu poin)</label><textarea class="proj-results">' + esc((p.results || []).join('\\n')) + '</textarea></div>' +
+      '<div class="editor-field"><label>Pull quote (kutipan besar ala Medium, opsional)</label><textarea class="proj-pullquote">' + esc(p.pullQuote || '') + '</textarea></div>' +
+      '<div class="editor-field"><label class="mono" style="color:var(--ink-faint);">// cover &amp; galeri foto proyek ini diedit langsung dari halaman detail proyek (tombol "🖼️ Ganti cover proyek" &amp; "+ Tambah gambar ke cerita")</label></div>' +
+      '<div class="editor-field"><label>Tech stack (pisahkan pakai koma)</label><input class="proj-stack" value="' + escAttr((p.stack || []).join(', ')) + '"></div>' +
+      '<div class="editor-grid-2">' +
+      '<div class="editor-field"><label>Link live demo</label><input class="proj-live" value="' + escAttr((p.links && p.links.live) || '') + '"></div>' +
+      '<div class="editor-field"><label>Link kode sumber</label><input class="proj-code" value="' + escAttr((p.links && p.links.code) || '') + '"></div>' +
+      '</div></div>';
+  }
+
+  function openEditorForm(){
+    document.getElementById('edProfileName').value = (content.profile && content.profile.name) || '';
+    document.getElementById('edProfileRole').value = (content.profile && content.profile.role) || '';
+    document.getElementById('edHeroEyebrow').value = content.hero.eyebrow;
+    document.getElementById('edHeroTitlePre').value = content.hero.titlePre;
+    document.getElementById('edHeroTitleAccent').value = content.hero.titleAccent;
+    document.getElementById('edHeroTitlePost').value = content.hero.titlePost;
+    document.getElementById('edHeroLede').value = content.hero.lede;
+    document.getElementById('edShowcaseWhoami').value = content.hero.showcaseWhoami || '';
+    document.getElementById('edShowcaseFocus').value = content.hero.showcaseFocus || '';
+    document.getElementById('edShowcaseAvailability').value = content.hero.showcaseAvailability || '';
+    document.getElementById('edAboutP1').value = content.about.p1;
+    document.getElementById('edAboutP2').value = content.about.p2;
+    document.getElementById('specEditorList').innerHTML = content.about.spec.map(specRowHTML).join('');
+    document.getElementById('skillsEditorList').innerHTML = content.skills.map(skillGroupHTML).join('');
+    document.getElementById('projectsEditorList').innerHTML = content.projects.map(projectItemHTML).join('');
+    document.getElementById('edContactIntro').value = content.contact.intro;
+    document.getElementById('edContactEmail').value = content.contact.email;
+    document.getElementById('edContactGithub').value = content.contact.github;
+    document.getElementById('edContactLinkedin').value = content.contact.linkedin;
+    document.getElementById('edSiteName').value = content.siteName;
+    document.getElementById('edFooterNote').value = content.footerNote;
+  }
+
+  function collectContentFromForm(){
+    const specList = Array.from(document.querySelectorAll('#specEditorList .editor-repeat-item')).map(item => ({
+      k: item.querySelector('.spec-k').value.trim(),
+      v: item.querySelector('.spec-v').value.trim()
+    })).filter(r => r.k || r.v);
+
+    const skillsList = Array.from(document.querySelectorAll('#skillsEditorList .editor-repeat-item')).map(item => ({
+      label: item.querySelector('.skill-label').value.trim(),
+      chips: item.querySelector('.skill-chips').value.split(',').map(s => s.trim()).filter(Boolean)
+    })).filter(g => g.label);
+
+    const projectsList = Array.from(document.querySelectorAll('#projectsEditorList .editor-repeat-item')).map(item => {
+      const id = item.querySelector('.proj-id').value.trim() || ('proyek-' + Math.random().toString(36).slice(2, 8));
+      const original = (content.projects || []).find(op => op.id === id);
+      return {
+        id,
+        title: item.querySelector('.proj-title').value.trim(),
+        version: item.querySelector('.proj-version').value.trim(),
+        year: item.querySelector('.proj-year').value.trim(),
+        pitch: item.querySelector('.proj-pitch').value.trim(),
+        challenge: item.querySelector('.proj-challenge').value.trim(),
+        approach: item.querySelector('.proj-approach').value.trim(),
+        results: item.querySelector('.proj-results').value.split('\\n').map(s => s.trim()).filter(Boolean),
+        pullQuote: item.querySelector('.proj-pullquote').value.trim(),
+        stack: item.querySelector('.proj-stack').value.split(',').map(s => s.trim()).filter(Boolean),
+        links: {
+          live: item.querySelector('.proj-live').value.trim() || '#',
+          code: item.querySelector('.proj-code').value.trim() || '#'
+        },
+        // cover & galeri foto disimpan lewat /api/upload dari halaman detail proyek, bukan dari form ini — jadi dipertahankan di sini
+        coverKey: original ? (original.coverKey || '') : '',
+        gallery: original ? (original.gallery || []) : []
+      };
+    }).filter(p => p.title);
+
+    return {
+      siteName: document.getElementById('edSiteName').value.trim(),
+      footerNote: document.getElementById('edFooterNote').value.trim(),
+      profile: {
+        name: document.getElementById('edProfileName').value.trim(),
+        role: document.getElementById('edProfileRole').value.trim(),
+        avatarKey: (content.profile && content.profile.avatarKey) || '',
+        coverKey: (content.profile && content.profile.coverKey) || ''
+      },
+      hero: {
+        eyebrow: document.getElementById('edHeroEyebrow').value.trim(),
+        titlePre: document.getElementById('edHeroTitlePre').value,
+        titleAccent: document.getElementById('edHeroTitleAccent').value,
+        titlePost: document.getElementById('edHeroTitlePost').value,
+        lede: document.getElementById('edHeroLede').value.trim(),
+        showcaseWhoami: document.getElementById('edShowcaseWhoami').value.trim(),
+        showcaseFocus: document.getElementById('edShowcaseFocus').value.trim(),
+        showcaseAvailability: document.getElementById('edShowcaseAvailability').value.trim()
+      },
+      about: { p1: document.getElementById('edAboutP1').value.trim(), p2: document.getElementById('edAboutP2').value.trim(), spec: specList },
+      skills: skillsList,
+      projects: projectsList,
+      contact: {
+        intro: document.getElementById('edContactIntro').value.trim(),
+        email: document.getElementById('edContactEmail').value.trim(),
+        github: document.getElementById('edContactGithub').value.trim(),
+        linkedin: document.getElementById('edContactLinkedin').value.trim()
+      }
+    };
+  }
+
+  function showToast(msg, isError){
+    const toast = document.getElementById('toast');
+    toast.textContent = msg;
+    toast.className = isError ? 'error' : '';
+    requestAnimationFrame(() => toast.classList.add('is-show'));
+    clearTimeout(showToast._t);
+    showToast._t = setTimeout(() => toast.classList.remove('is-show'), 3200);
+  }
+
+  async function publish(){
+    const user = window.netlifyIdentity && netlifyIdentity.currentUser();
+    if(!user){ showToast('Kamu harus login dulu sebagai developer.', true); return; }
+    const newContent = collectContentFromForm();
+    const btn = document.getElementById('devPublishBtn');
+    btn.disabled = true; btn.textContent = 'Menyimpan...';
+    try{
+      const token = await user.jwt();
+      const res = await fetch(API_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + token },
+        body: JSON.stringify(newContent)
+      });
+      if(!res.ok) throw new Error('save failed');
+      content = newContent;
+      renderAll();
+      showToast('Tersimpan & terpublish ✓');
+      history.back();
+    } catch(e){
+      showToast('Gagal menyimpan. Coba lagi.', true);
+    } finally {
+      btn.disabled = false; btn.textContent = 'Simpan & Publish';
+    }
+  }
+
+  // ---------- PHOTO MODAL: upload foto profesional (avatar / cover hero / cover proyek / galeri cerita) ----------
+  const photoModal = document.getElementById('photoModal');
+  const photoFrame = document.getElementById('photoFrame');
+  const photoFrameImg = document.getElementById('photoFrameImg');
+  const photoFrameEmpty = document.getElementById('photoFrameEmpty');
+  const photoFileInput = document.getElementById('photoFileInput');
+  const photoControls = document.getElementById('photoControls');
+  const photoZoomRange = document.getElementById('photoZoomRange');
+  const photoSaveBtn = document.getElementById('photoSaveBtn');
+
+  let pm = { mode: null, projectId: null, natW: 0, natH: 0, baseScale: 1, scale: 1, offX: 0, offY: 0, dragging: false, startX: 0, startY: 0, startOffX: 0, startOffY: 0 };
+
+  const PHOTO_MODES = {
+    avatar:  { frameClass: 'mode-avatar',  title: 'Ganti foto profil',      outW: 640,  outH: 640 },
+    cover:   { frameClass: 'mode-cover',   title: 'Ganti cover halaman utama', outW: 1600, outH: 600 },
+    project: { frameClass: 'mode-project', title: 'Ganti cover proyek',     outW: 1200, outH: 675 },
+    gallery: { frameClass: 'mode-project', title: 'Tambah gambar ke cerita', outW: 1200, outH: 675 }
+  };
+
+  function openPhotoModal(mode, opts){
+    opts = opts || {};
+    pm = { mode, projectId: opts.projectId || null, natW: 0, natH: 0, baseScale: 1, scale: 1, offX: 0, offY: 0, dragging: false };
+    const cfg = PHOTO_MODES[mode];
+    document.getElementById('photoModalTitle').textContent = cfg.title;
+    photoFrame.className = 'photo-frame ' + cfg.frameClass;
+    photoFrameImg.style.display = 'none';
+    photoFrameEmpty.style.display = 'flex';
+    photoControls.style.display = 'none';
+    photoZoomRange.value = 100;
+    photoSaveBtn.disabled = true;
+    photoFileInput.value = '';
+    photoModal.classList.add('is-active');
+  }
+
+  function closePhotoModal(){ photoModal.classList.remove('is-active'); }
+
+  function loadFileIntoFrame(file){
+    if(!file || !/^image\//.test(file.type)){ showToast('File harus berupa gambar.', true); return; }
+    const reader = new FileReader();
+    reader.onload = () => {
+      const img = new Image();
+      img.onload = () => {
+        pm.natW = img.naturalWidth; pm.natH = img.naturalHeight;
+        photoFrameImg.src = reader.result;
+        photoFrameImg.style.display = 'block';
+        photoFrameEmpty.style.display = 'none';
+        photoControls.style.display = 'block';
+        photoSaveBtn.disabled = false;
+        setupFrameTransform();
+      };
+      img.src = reader.result;
+    };
+    reader.readAsDataURL(file);
+  }
+
+  function frameRect(){ return photoFrame.getBoundingClientRect(); }
+
+  function setupFrameTransform(){
+    const r = frameRect();
+    pm.baseScale = Math.max(r.width / pm.natW, r.height / pm.natH);
+    pm.scale = pm.baseScale;
+    const dispW = pm.natW * pm.scale, dispH = pm.natH * pm.scale;
+    pm.offX = (r.width - dispW) / 2;
+    pm.offY = (r.height - dispH) / 2;
+    applyFrameTransform();
+  }
+
+  function clampOffsets(r){
+    const dispW = pm.natW * pm.scale, dispH = pm.natH * pm.scale;
+    pm.offX = Math.min(0, Math.max(r.width - dispW, pm.offX));
+    pm.offY = Math.min(0, Math.max(r.height - dispH, pm.offY));
+  }
+
+  function applyFrameTransform(){
+    const r = frameRect();
+    clampOffsets(r);
+    photoFrameImg.style.width = (pm.natW * pm.scale) + 'px';
+    photoFrameImg.style.height = (pm.natH * pm.scale) + 'px';
+    photoFrameImg.style.left = pm.offX + 'px';
+    photoFrameImg.style.top = pm.offY + 'px';
+  }
+
+  photoFrame.addEventListener('pointerdown', (e) => {
+    if(photoFrameImg.style.display === 'none') return;
+    pm.dragging = true;
+    pm.startX = e.clientX; pm.startY = e.clientY;
+    pm.startOffX = pm.offX; pm.startOffY = pm.offY;
+    photoFrame.setPointerCapture(e.pointerId);
+  });
+  photoFrame.addEventListener('pointermove', (e) => {
+    if(!pm.dragging) return;
+    pm.offX = pm.startOffX + (e.clientX - pm.startX);
+    pm.offY = pm.startOffY + (e.clientY - pm.startY);
+    applyFrameTransform();
+  });
+  ['pointerup', 'pointercancel', 'pointerleave'].forEach(ev => photoFrame.addEventListener(ev, () => { pm.dragging = false; }));
+
+  photoZoomRange.addEventListener('input', () => {
+    pm.scale = pm.baseScale * (Number(photoZoomRange.value) / 100);
+    applyFrameTransform();
+  });
+
+  document.getElementById('photoBrowseBtn').addEventListener('click', () => photoFileInput.click());
+  photoFileInput.addEventListener('change', () => { if(photoFileInput.files[0]) loadFileIntoFrame(photoFileInput.files[0]); });
+  photoFrame.addEventListener('dragover', (e) => e.preventDefault());
+  photoFrame.addEventListener('drop', (e) => { e.preventDefault(); if(e.dataTransfer.files[0]) loadFileIntoFrame(e.dataTransfer.files[0]); });
+  document.getElementById('photoModalCloseBtn').addEventListener('click', closePhotoModal);
+  document.getElementById('photoCancelBtn').addEventListener('click', closePhotoModal);
+
+  document.getElementById('photoSaveBtn').addEventListener('click', async () => {
+    const user = window.netlifyIdentity && netlifyIdentity.currentUser();
+    if(!user){ showToast('Kamu harus login dulu sebagai developer.', true); return; }
+    const cfg = PHOTO_MODES[pm.mode];
+    const r = frameRect();
+    const k = cfg.outW / r.width;
+    const canvas = document.createElement('canvas');
+    canvas.width = cfg.outW; canvas.height = cfg.outH;
+    const ctx = canvas.getContext('2d');
+    ctx.drawImage(photoFrameImg, pm.offX * k, pm.offY * k, pm.natW * pm.scale * k, pm.natH * pm.scale * k);
+    const dataUrl = canvas.toDataURL('image/jpeg', 0.86);
+
+    const btn = photoSaveBtn;
+    btn.disabled = true; btn.textContent = 'Mengunggah...';
+    try{
+      const token = await user.jwt();
+      const res = await fetch(UPLOAD_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + token },
+        body: JSON.stringify({ dataUrl })
+      });
+      if(!res.ok){ const err = await res.json().catch(() => ({})); throw new Error(err.error || 'upload failed'); }
+      const { key } = await res.json();
+
+      let ok = true;
+      if(pm.mode === 'avatar'){
+        ok = await saveContentPatch(c => { c.profile.avatarKey = key; });
+      } else if(pm.mode === 'cover'){
+        ok = await saveContentPatch(c => { c.profile.coverKey = key; });
+      } else if(pm.mode === 'project'){
+        ok = await saveContentPatch(c => { const proj = c.projects.find(x => x.id === pm.projectId); if(proj) proj.coverKey = key; });
+      } else if(pm.mode === 'gallery'){
+        const caption = window.prompt('Keterangan gambar (opsional):', '') || '';
+        ok = await saveContentPatch(c => {
+          const proj = c.projects.find(x => x.id === pm.projectId);
+          if(proj){ if(!proj.gallery) proj.gallery = []; proj.gallery.push({ key, caption: caption.trim() }); }
+        });
+      }
+
+      if(ok){
+        showToast('Foto tersimpan & terpublish ✓');
+        closePhotoModal();
+        if((pm.mode === 'project' || pm.mode === 'gallery') && pm.projectId){ showProject(pm.projectId); }
+      }
+    } catch(e){
+      showToast('Gagal mengunggah foto. Coba lagi.', true);
+    } finally {
+      btn.disabled = false; btn.textContent = 'Simpan foto';
+    }
+  });
+
+  // ---------- UI MODE DEVELOPER (Netlify Identity) ----------
+  function updateDevUI(){
+    const user = window.netlifyIdentity && netlifyIdentity.currentUser();
+    const devToggle = document.getElementById('devToggle');
+    const devBar = document.getElementById('devBar');
+    if(user){
+      devToggle.style.display = 'none';
+      devBar.classList.add('is-active');
+      document.getElementById('devUserLabel').textContent =
+        (user.user_metadata && user.user_metadata.full_name) ? user.user_metadata.full_name : user.email;
+    } else {
+      devToggle.style.display = 'flex';
+      devBar.classList.remove('is-active');
+      if(location.hash === '#/edit'){ location.hash = ''; }
+    }
+    if(content){
+      renderProfile();
+      if(currentProjectId){ fillProjectPage(currentProjectId); }
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('devToggle').addEventListener('click', () => {
+      if(window.netlifyIdentity) netlifyIdentity.open('login');
+      else showToast('Widget login belum termuat (perlu online & sudah dideploy ke Netlify).', true);
+    });
+    document.getElementById('devEditBtn').addEventListener('click', () => { location.hash = '#/edit'; });
+    document.getElementById('devLogoutBtn').addEventListener('click', () => netlifyIdentity.logout());
+    document.getElementById('editorBack').addEventListener('click', () => history.back());
+    document.getElementById('devCancelBtn').addEventListener('click', () => history.back());
+    document.getElementById('devPublishBtn').addEventListener('click', publish);
+    document.getElementById('addSpecBtn').addEventListener('click', () => document.getElementById('specEditorList').insertAdjacentHTML('beforeend', specRowHTML()));
+    document.getElementById('addSkillGroupBtn').addEventListener('click', () => document.getElementById('skillsEditorList').insertAdjacentHTML('beforeend', skillGroupHTML()));
+    document.getElementById('addProjectBtn').addEventListener('click', () => document.getElementById('projectsEditorList').insertAdjacentHTML('beforeend', projectItemHTML()));
+
+    document.getElementById('avatarFrame').addEventListener('click', () => { if(isDev()) openPhotoModal('avatar'); });
+    document.getElementById('editCoverBtn').addEventListener('click', () => openPhotoModal('cover'));
+    document.getElementById('editProjectCoverBtn').addEventListener('click', () => { if(currentProjectId) openPhotoModal('project', { projectId: currentProjectId }); });
+
+    if(window.netlifyIdentity){
+      netlifyIdentity.on('init', updateDevUI);
+      netlifyIdentity.on('login', () => { netlifyIdentity.close(); updateDevUI(); });
+      netlifyIdentity.on('logout', updateDevUI);
+      netlifyIdentity.init();
+    }
+
+    loadContent();
+  });
+</script>
+<script>
+  // ---------- ANIMASI MASUK: hero (langsung saat halaman dibuka) & scroll reveal ----------
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let heroRevealed = false;
+
+  function playHeroReveal(){
+    if(heroRevealed || reduceMotion) return;
+    heroRevealed = true;
+    const seq = document.querySelectorAll('.reveal-hero');
+    seq.forEach((el, i) => {
+      setTimeout(() => el.classList.add('in-view'), 70 + i * 110);
+    });
+  }
+
+  let scrollObserver = null;
+  function initScrollReveal(){
+    if(reduceMotion) return;
+    const items = document.querySelectorAll('.reveal:not(.in-view)');
+    if(!items.length) return;
+    if(!scrollObserver){
+      scrollObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if(entry.isIntersecting){
+            entry.target.classList.add('in-view');
+            scrollObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+    }
+    items.forEach(el => scrollObserver.observe(el));
+  }
+
+  // ---------- CONTACT FORM: kirim email langsung lewat EmailJS ----------
+  // GANTI DENGAN MILIKMU: 3 nilai ini didapat dari dashboard akun EmailJS-mu (emailjs.com)
+  const EMAILJS_PUBLIC_KEY = '5PeRKSSiwELc5pWTf';
+  const EMAILJS_SERVICE_ID = 'service_7bm60o9';
+  const EMAILJS_TEMPLATE_ID = 'template_lng3j4x';
+
+  if(window.emailjs){ emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY }); }
+
+  const contactForm = document.getElementById('contactForm');
+  const formStatus = document.getElementById('formStatus');
+  const submitBtn = document.getElementById('submitBtn');
+
+  contactForm.addEventListener('submit', function(e){
+    e.preventDefault();
+
+    const isConfigured = EMAILJS_PUBLIC_KEY.indexOf('GANTI_DENGAN') !== 0;
+    formStatus.className = 'form-status';
+
+    if(!isConfigured){
+      formStatus.textContent = 'Form belum aktif — isi dulu Service ID, Template ID, dan Public Key dari EmailJS di kode.';
+      formStatus.classList.add('error');
+      return;
+    }
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Mengirim...';
+    formStatus.textContent = '';
+
+    emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, contactForm)
+      .then(() => {
+        formStatus.textContent = 'Pesan terkirim. Terima kasih, saya akan balas secepatnya.';
+        formStatus.classList.add('success');
+        contactForm.reset();
+      })
+      .catch(() => {
+        formStatus.textContent = 'Gagal mengirim. Coba lagi, atau kirim langsung lewat email di atas.';
+        formStatus.classList.add('error');
+      })
+      .finally(() => {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Kirim pesan →';
+      });
+  });
+</script>
+</body>
+</html>

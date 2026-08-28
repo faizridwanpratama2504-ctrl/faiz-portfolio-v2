@@ -1,0 +1,12 @@
+{
+  "name": "faiz-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Portfolio Faiz dengan mode developer (edit + publish) dan mode user (lihat), backend via Netlify Functions + Netlify Blobs, auth via Netlify Identity.",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@netlify/blobs": "^8.1.0"
+  }
+}
