@@ -5,6 +5,17 @@
 
 const { getStore } = require('@netlify/blobs');
 
+// Beberapa environment gagal auto-configure Netlify Blobs (bug platform yang cukup
+// sering terjadi, terutama kalau site pakai "base directory" custom). Kalau itu
+// terjadi, kasih siteID & token manual lewat environment variable BLOBS_SITE_ID
+// & BLOBS_TOKEN (isi di Project configuration -> Environment variables).
+function openStore(name) {
+  if (process.env.BLOBS_SITE_ID && process.env.BLOBS_TOKEN) {
+    return getStore({ name, siteID: process.env.BLOBS_SITE_ID, token: process.env.BLOBS_TOKEN });
+  }
+  return getStore(name);
+}
+
 exports.handler = async (event) => {
   const headers = {
     'Content-Type': 'application/json',
@@ -17,7 +28,7 @@ exports.handler = async (event) => {
     return { statusCode: 204, headers, body: '' };
   }
 
-  const store = getStore('portfolio-claps');
+  const store = openStore('portfolio-claps');
 
   if (event.httpMethod === 'GET') {
     const id = event.queryStringParameters && event.queryStringParameters.id;
