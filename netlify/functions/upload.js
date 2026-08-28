@@ -5,6 +5,17 @@
 
 const { getStore } = require('@netlify/blobs');
 
+// Beberapa environment gagal auto-configure Netlify Blobs (bug platform yang cukup
+// sering terjadi, terutama kalau site pakai "base directory" custom). Kalau itu
+// terjadi, kasih siteID & token manual lewat environment variable BLOBS_SITE_ID
+// & BLOBS_TOKEN (isi di Project configuration -> Environment variables).
+function openStore(name) {
+  if (process.env.BLOBS_SITE_ID && process.env.BLOBS_TOKEN) {
+    return getStore({ name, siteID: process.env.BLOBS_SITE_ID, token: process.env.BLOBS_TOKEN });
+  }
+  return getStore(name);
+}
+
 const MAX_BYTES = 4_500_000; // ~4.5MB, longgar karena gambar sudah dikompres di browser sebelum dikirim
 
 exports.handler = async (event) => {
@@ -52,7 +63,7 @@ exports.handler = async (event) => {
     return { statusCode: 400, headers, body: JSON.stringify({ error: 'Gambar terlalu besar. Perkecil dulu (maks ~4.5MB).' }) };
   }
 
-  const store = getStore('portfolio-images');
+  const store = openStore('portfolio-images');
   const key = 'img_' + Date.now().toString(36) + '_' + Math.random().toString(36).slice(2, 8);
 
   await store.set(key, buffer, { metadata: { contentType } });
